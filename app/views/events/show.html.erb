@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<%= @event.name %>
+<%= link_to 'Add Invites', new_event_invite_path(@event) %>
+<%= link_to 'Invites', event_invites_path(@event) if @event.invites.length > 0 %>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

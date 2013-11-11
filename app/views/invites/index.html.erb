@@ -1,0 +1,34 @@
+<h1>Listing events</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @invites.each do |invite| %>
+      <tr>
+        <td><%= link_to invite.name, event_invite_path(@event, invite) %></td> 
+        <td><%= link_to 'Edit', edit_event_invite_path(@event, invite) %></td>
+        <td><%= link_to 'Destroy', event_invite_path(@event, invite), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= form_for invite, url: event_invite_path(@event,invite) do |f| %>
+            <%= f.check_box :rsvp %>
+            <%= f.submit "RSVP" %>
+          <% end %>
+        </td>
+
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Invite', new_event_invite_path(@event) %>
+<%= link_to 'Back', event_path(@event) %>

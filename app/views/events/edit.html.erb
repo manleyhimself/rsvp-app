@@ -1,0 +1,11 @@
+<h1>Editing event</h1>
+
+
+<%= form_for @event do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit "Update Event" %>
+<% end %>
+
+<%= link_to 'Show', @event %> 
+<%= link_to 'Back', events_path %>

@@ -1,0 +1,10 @@
+<h1>Editing invite</h1>
+
+<%= form_for([@event,@invite]) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit "Update Invite" %>
+<% end %>
+
+<%= link_to 'Show', event_invite_path(@event, @invite) %> 
+<%= link_to 'Back', event_invites_path(@invite) %>
